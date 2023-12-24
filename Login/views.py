@@ -39,7 +39,7 @@ def signup_view(request):
 
         if password != password_confirmation:
             messages.info(request,'Password doesn"t match please try again')
-        
+    
         else:
             user = User.objects.create_user(username = username,password=password, email=email)
             user.save()

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+        <h1>SIGNUP</h1>
+        <div class="messages">
+            {%if messages%}
+                {%for message in messages%}
+                    <h3>{{message}}</h3>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <form action='' method="post">
+            {% csrf_token %}
+            <div class="username">
+                <label for="username">User Name: </label>
+                <input type="text" placeholder="Please enter the username" name="username">
+            </div>
+            <div class="email">
+                <label for="email">Email ID: </label>
+                <input type="email" placeholder="Please enter the Email ID" name="email">
+            </div>
+            <div class="password">
+                <label for="password">Password: </label>
+                <input type="password" placeholder="Please enter the password" name="password">
+            </div>
+            <div class="password_confirmation">
+                <label for="password_confirmation">Confirm Your Password: </label>
+                <input type="password" placeholder="Please re-enter the password" name="password_confirmation"><br>
+            </div>
+            <div class="submit">
+                <input type="submit">
+            </div>
+        </form>
+    </body>
+</html>

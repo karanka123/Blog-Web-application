@@ -7,27 +7,31 @@
 </head>
 <body>
     <h1>Add Blogs</h1>
-    <form action = "{% url 'add' %}" method="post">
+    <form action="{% url 'add' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="title">
-            <label for="title">Title: </label>
-            <input type="text" placeholder="TITLE" name = "title">
-        </div>
-        <div class="content">
-            <label for="content">Context: </label>
-            <textarea  name="content rows="4" cols="50"></textarea>
-        </div>
-        <div class="image">
-            <label for="image">Image: </label>
-            <input type="file" name = "image" accept="image/jpeg">
-        </div></br>
-        <div class="video">
-            <label for="input">Choose a video file to process:</label>
-            <input type="file" id="input" name="input_video" accept="video/mp4, video/mov">
-        </div>
+        <fieldset>
+            <legend>Blog Details</legend>
+            <div class="title">
+                <label for="title">Title:</label>
+                <input type="text" placeholder="TITLE" name="title">
+            </div>
+            <div class="content">
+                <label for="content">Content:</label>
+                <textarea name="content" rows="4" cols="50"></textarea>
+            </div>
+            <div class="image">
+                <label for="image">Image:</label>
+                <input type="file" name="image" accept="image/jpeg">
+            </div><br>
+            <div class="video">
+                <label for="input">Choose a video file to process:</label>
+                <input type="file" id="input" name="input_video" accept="video/mp4, video/mov">
+            </div>
+        </fieldset>
         <div class="submit">
             <input type="submit">
         </div>
     </form>
+    
 </body>
 </html>

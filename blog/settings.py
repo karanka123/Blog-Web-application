@@ -56,7 +56,7 @@ ROOT_URLCONF = "blog.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['/workspaces/Web-development/Login/Template'],
+        "DIRS": ['/workspaces/development1/Login/Template', '/workspaces/development1/Home/Template' ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

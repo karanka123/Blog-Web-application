@@ -9,6 +9,13 @@
     <script src='main.js'></script>
 </head>
 <body>
-        
+    <div class="messages">
+        {%if messages%}
+            {%for message in messages%}
+                <h3>{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+    <h1>BLOGS HOME</h1>
+    <a href="{%url 'add' %}"><button>Add Blog</button></a> 
 </body>
 </html>

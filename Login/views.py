@@ -16,7 +16,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.info(request, 'User has been successfully logined in')
-            return redirect('/')
+            return redirect('home/')
         else:
             messages.info(request, 'Invalid credentials')
             return redirect('/')
@@ -44,5 +44,5 @@ def signup_view(request):
             user = User.objects.create_user(username = username,password=password, email=email)
             user.save()
             messages.info(request, ' you have been successfullt signed in')
-            return redirect('')
+            return redirect('/')
     return render(request, 'Login/signup.html')

@@ -2,12 +2,6 @@
     <head>
         <title>Register</title>
     </head>
-        <div class="messages">
-            {%if messages%}
-                {%for message in messages%}
-                    <h3>{{message}}</h3>
-                {% endfor %}
-            {% endif %}
         <h1>LOGIN</h1>
         <form action='' method="post">
             {% csrf_token %}

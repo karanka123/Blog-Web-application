@@ -11,6 +11,10 @@
         {% csrf_token %}
         <fieldset>
             <legend>Blog Details</legend>
+            <div class="author">
+                <label for="author">Author: </label>
+                <input type="text" placeholder="AUTHOR" name="author">
+            </div>
             <div class="title">
                 <label for="title">Title:</label>
                 <input type="text" placeholder="TITLE" name="title">

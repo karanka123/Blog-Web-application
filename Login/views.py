@@ -7,7 +7,13 @@ from django.urls import reverse
 
 
 def login_view(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect('home/')
+        else:
+            return render(request, 'Login/login.html')
+            
+    elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
@@ -20,7 +26,7 @@ def login_view(request):
         else:
             messages.info(request, 'Invalid credentials')
             return redirect('/')
-    return render(request, 'Login/login.html')
+    
 
 def signup_view(request):
     if request.method == 'POST':

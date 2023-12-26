@@ -5,7 +5,7 @@ from Login.models import blog
 # Create your views here.
 
 def home(request):
-    return render(request, 'Home/home.html', {'blog':blog.objects.all()})
+    return render(request, 'Home/home.html', {'blogs':blog.objects.all()})
 
 def blog_add(request):
     if request.method == 'POST':
@@ -18,3 +18,6 @@ def blog_add(request):
         act_blog.save()
         return redirect('/')
     return render(request, 'Home/add.html')
+
+def Myblogs(request):
+    return 

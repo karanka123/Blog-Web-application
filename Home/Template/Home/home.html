@@ -16,9 +16,11 @@
             {% endfor %}
         {% endif %}
     <h1>BLOGS HOME</h1>
+    {{blog}}
     <h2>Author: {{blog.Author}}</h2>
     <h3>Title:{{Header}}</h3>
  
     <a href="{%url 'add' %}"><button>Add Blog</button></a> 
+    <a href="{% url 'myblogs' %}"
 </body>
 </html>

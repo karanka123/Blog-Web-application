@@ -16,11 +16,15 @@
             {% endfor %}
         {% endif %}
     <h1>BLOGS HOME</h1>
-    {{blog}}
-    <h2>Author: {{blog.Author}}</h2>
-    <h3>Title:{{Header}}</h3>
- 
+    {%for post in blogs%}
+        <h3>Author: {{post.Author}}</h3>
+        <h3>Title: {{post.Title}}</h3>
+        <h3>Content: {{post.Content}}</h3>
+    {%endfor%}
+        
+
+
     <a href="{%url 'add' %}"><button>Add Blog</button></a> 
-    <a href="{% url 'myblogs' %}"
+    <a href="{% url 'myblogs' %}"></a>
 </body>
 </html>

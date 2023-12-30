@@ -3,12 +3,7 @@ from django.db import models
 # Create your models here.
 from django.contrib.auth.models import User
 
-# Create your models here.
-
-class User(models.Model):
-    username = models.CharField(max_length=24)
-    blogs = models.ManyToManyField('Blog', related_name='user_blogs')
-
+# Create your models here.\
 
 class blog(models.Model):
     Author = models.CharField(max_length = 24)
@@ -18,5 +13,5 @@ class blog(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'post_set')
 
     def __str__(self):
-        return self.Author
+        return self.Author, self.Title
     

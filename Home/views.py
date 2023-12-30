@@ -5,7 +5,10 @@ from Login.models import blog
 # Create your views here.
 
 def home(request):
-    return render(request, 'Home/home.html', {'blogs':blog.objects.all()})
+    post_set  = blog.objects.all()
+    
+
+    return render(request, 'Home/home.html', {'blogs':post_set})
 
 def blog_add(request):
     if request.method == 'POST':
@@ -20,4 +23,4 @@ def blog_add(request):
     return render(request, 'Home/add.html')
 
 def Myblogs(request):
-    return 
+    pass

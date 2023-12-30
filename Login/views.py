@@ -26,7 +26,6 @@ def login_view(request):
         else:
             messages.info(request, 'Invalid credentials')
             return redirect('/')
-    
 
 def signup_view(request):
     if request.method == 'POST':

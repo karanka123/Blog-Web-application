@@ -3,6 +3,11 @@
         <title>Register</title>
     </head>
         <h1>LOGIN</h1>
+        {%if messages%}
+            {%for message in messages%}
+                <h3>{{message}}</h3>
+            {% endfor %}
+        {% endif %}
         <form action='' method="post">
             {% csrf_token %}
             <div class="username">

@@ -6,8 +6,6 @@ from Login.models import blog
 
 def home(request):
     post_set  = blog.objects.all()
-    
-
     return render(request, 'Home/home.html', {'blogs':post_set})
 
 def blog_add(request):
@@ -23,4 +21,10 @@ def blog_add(request):
     return render(request, 'Home/add.html')
 
 def Myblogs(request):
-    pass
+    current_user = request.user
+    mypost = current_user.post_set.all()
+    return render(request, 'Home/myblogs.html', {'blogs': mypost})
+
+
+def profile(request):
+    return render(request, 'Home/profile.html')

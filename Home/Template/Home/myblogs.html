@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -7,16 +7,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Blogs</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='{%static "css/home.css"%}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{%  static "css/myblogs.css" %}'>
     <script src='main.js'></script>
 </head>
 <body>
-    <div class="messages">
-        {%if messages%}
-            {%for message in messages%}
-                <h3>{{message}}</h3>
-            {% endfor %}
-        {% endif %}
     <h1>BLOGS HOME</h1>
     {%for post in blogs%}
         <fieldset>
@@ -36,9 +30,5 @@
         </fieldset>
     {%endfor%}
         
-    <a href="{%url 'add' %}"><button>Add Blog</button></a> 
-    <a href="{% url 'myblogs' %}"><button>MyBlogs</button></a></div></body></br>
-    <a href="{% url 'Login:logout' %}"><button>Logout</button></a></html></br>
-    <a href="{% url 'profile' %}"><button>My Profile</button></a>
 </body>
 </html>

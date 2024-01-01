@@ -17,14 +17,25 @@
         {% endif %}
     <h1>BLOGS HOME</h1>
     {%for post in blogs%}
-        <h3>Author: {{post.Author}}</h3>
-        <h3>Title: {{post.Title}}</h3>
-        <h3>Content: {{post.Content}}</h3>
+        <fieldset>
+            <label>BLOG --- {{post.user}}</label>
+            <h3>Author: {{post.Author}}</h3>
+            <h3>Title: {{post.Title}}</h3>
+            {% if post.Image %}
+                <img style="width: 300px; height: 300px;" src="{{ post.Image.url }}" alt="Image">
+            {% endif %}
+            {% if post.Video %}
+                <video width="640" height="360" controls>
+                    <source src="{{post.Video.url}}" type="video/mp4">
+                </video>
+            {% endif %}
+
+            <h3>Content: {{post.Content}}</h3>
+        </fieldset>
     {%endfor%}
         
-
-
     <a href="{%url 'add' %}"><button>Add Blog</button></a> 
-    <a href="{% url 'myblogs' %}"></a>
+    <a href="{% url 'myblogs' %}"><button>MyBlogs</button></a></div></body></br>
+    <a href="{% url 'Login:logout' %}"><button>Logout</button></a>
 </body>
 </html>

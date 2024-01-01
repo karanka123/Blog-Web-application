@@ -14,10 +14,10 @@ def blog_add(request):
     if request.method == 'POST':
         Title = request.POST['title']
         Content = request.POST['content']
-        Image= request.POST['image']
-        Video = request.POST['input_video']
+        image_file = request.FILES.get('image')
+        Video = request.FILES.get('input_video')
         Author = request.POST['author']
-        act_blog  = blog(Title=Title, Content=Content, Image=Image, Author=Author, user = request.user)
+        act_blog  = blog(Title=Title, Content=Content, Image=image_file, Author=Author, user = request.user, Video = Video)
         act_blog.save()
         return redirect('/')
     return render(request, 'Home/add.html')

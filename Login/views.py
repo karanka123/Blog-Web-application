@@ -51,3 +51,9 @@ def signup_view(request):
             messages.info(request, ' you have been successfullt signed in')
             return redirect('/')
     return render(request, 'Login/signup.html')
+
+
+def logout_view(request):
+    logout(request)
+    messages.info(request, 'User has been successfully logged out')
+    return HttpResponseRedirect(reverse('Login:login'))

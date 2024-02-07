@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from Login.models import blog
 
-
-# Create your views here.
-
 def home(request):
     post_set  = blog.objects.all()
     return render(request, 'Home/home.html', {'blogs':post_set})

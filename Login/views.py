@@ -34,6 +34,9 @@ def signup_view(request):
         email = request.POST['email']
         password_confirmation = request.POST['password_confirmation']
 
+        if username == '':
+            messages.error(request, 'User name cannot be empty')
+
         if User.objects.filter(username=username).exists():
             messages.info(request,'User already exists, Please try with a different user name')
             return render(request, 'Login/signup.html')

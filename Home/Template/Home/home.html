@@ -17,7 +17,8 @@
                 <h3>{{message}}</h3>
             {% endfor %}
         {% endif %}
-    <h1>BLOGS HOME</h1>
+    <div class="container">
+        <h1>BLOGS HOME</h1>
     {%for post in blogs%}
         <fieldset>
             <label>BLOG --- {{post.user}}</label>
@@ -35,6 +36,8 @@
             <h3>Content: {{post.Content}}</h3>
         </fieldset>
     {%endfor%}
+    </div>
+    
         
     <a href="{%url 'add' %}"><button>Add Blog</button></a> 
     <a href="{% url 'myblogs' %}"><button>MyBlogs</button></a></div></body></br>
